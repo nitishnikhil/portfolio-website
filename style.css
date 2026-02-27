@@ -1,24 +1,64 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f4f4;
+    padding: 0;
+    background-color: #f4f6f9;
+    text-align: center;
 }
 
 header {
-    background: #0078D4;
+    background: linear-gradient(to right, #4CAF50, #2E8B57);
     color: white;
-    padding: 40px;
-    text-align: center;
+    padding: 40px 20px;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.resume-btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: #2E8B57;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.resume-btn:hover {
+    background-color: #ddd;
 }
 
 section {
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #2E8B57;
+}
+
+ul {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
+    background-color: #2E8B57;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
 }
