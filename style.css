@@ -16,79 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Background Animation */
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
-}
-
-/* Floating Elements */
-.floating-element {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-.float-1 {
-    width: 300px;
-    height: 300px;
-    background: #0ea5e9;
-    animation: float 20s infinite ease-in-out;
-    top: -50px;
-    left: 10%;
-}
-
-.float-2 {
-    width: 200px;
-    height: 200px;
-    background: #22c55e;
-    animation: float 25s infinite ease-in-out reverse;
-    top: 20%;
-    right: 5%;
-}
-
-.float-3 {
-    width: 150px;
-    height: 150px;
-    background: #0ea5e9;
-    animation: float 22s infinite ease-in-out;
-    bottom: 10%;
-    left: 20%;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px);
-    }
-    25% {
-        transform: translateY(-30px) translateX(20px);
-    }
-    50% {
-        transform: translateY(-60px) translateX(-20px);
-    }
-    75% {
-        transform: translateY(-30px) translateX(20px);
-    }
-}
+/* Background animation and floating elements removed for simplicity */
 
 /* HERO */
 .hero{
@@ -143,12 +71,10 @@ body{
     margin-bottom:20px;
     transition:0.4s;
     animation: slideInUp 0.8s ease-out;
-    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
 }
 
 .profile-img:hover{
     transform:scale(1.1) rotate(5deg);
-    box-shadow: 0 0 50px rgba(14, 165, 233, 0.8);
 }
 
 .tagline {
@@ -194,7 +120,6 @@ body{
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 2s infinite;
     opacity: 0.7;
     font-size: 0.9rem;
     cursor: pointer;
@@ -223,24 +148,6 @@ body{
     color:#111827;
 }
 
-.btn:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover:before {
-    width: 300px;
-    height: 300px;
-}
-
 .btn:hover{
     transform:translateY(-3px);
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
@@ -263,22 +170,6 @@ body{
     border: 1px solid rgba(14, 165, 233, 0.1);
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
 .card.fade-in {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
@@ -297,7 +188,6 @@ body{
 
 .card:hover{
     transform:translateY(-5px);
-    box-shadow: 0 15px 40px rgba(14, 165, 233, 0.2);
 }
 
 .card h2 {
@@ -332,25 +222,9 @@ body{
     animation-delay: calc(0.1s * var(--index));
 }
 
-.skill-tag::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    transition: left 0.5s ease;
-}
-
-.skill-tag:hover::before {
-    left: 100%;
-}
-
 .skill-tag:hover{
     background:#22c55e;
     transform:scale(1.15) rotate(2deg);
-    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
 }
 
 @keyframes slideInLeft {
@@ -391,36 +265,11 @@ body{
 .project-icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    animation: bounce 2s infinite;
 }
 
-.project-icon {
-    animation: bounce 2s infinite;
-}
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
 
-.project-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.3), transparent);
-    transition: left 0.5s ease;
-}
 
-.project-box:hover::before {
-    left: 100%;
-}
 
 .project-box h3 {
     margin: 15px 0 10px;
@@ -571,6 +420,109 @@ footer p {
 
 .contact-link p:last-child {
     font-weight: 600;
+}
+
+/* CERTIFICATION SECTION */
+.certification-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cert-image {
+    flex: 0 0 auto;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.cert-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    border: 3px solid #0ea5e9;
+    transition: all 0.3s ease;
+}
+
+.cert-image img:hover {
+    transform: scale(1.1) rotateZ(-5deg);
+}
+
+.cert-details {
+    flex: 1;
+    min-width: 250px;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.cert-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cert-date {
+    font-size: 0.95rem;
+    color: #0ea5e9;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cert-description {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cert-link {
+    text-decoration: none;
+}
+
+.cert-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+}
+
+.cert-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cert-btn:hover::before {
+    left: 100%;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Responsive Design */
